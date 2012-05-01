@@ -15,10 +15,10 @@
 		<td></td>
 		<td><%= job.company %></td>
 		<td><%= job.application_date %></td>
-		<td>Edit</td>
-		<td>Delete</td>		
+		<td><%= link_to("Edit", {:action => "edit", :id => job.id})  %></td>
+		<td><%= link_to("Delete", {:action => "delete", :id => job.id})  %></td>		
 	</tr>
 	<% end %>
 </table>	
 
-<a href="/jobs">Add a Job</a>
+<a href="/jobs/new">Add a Job</a>

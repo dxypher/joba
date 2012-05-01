@@ -1,0 +1,21 @@
+<a href="/jobs">Back to Jobs List</a>
+<h2>Are you sure you want to delete:</h2>
+<%= form_for @job, :url => {:action => 'destroy'}, :method => 'delete' do %> 
+<table>
+	<tr>
+		<th>Job Title</th>
+		<td><%= @job.job_title %></td>
+	</tr>
+	<tr>
+		<th>Company</th>
+		<td><%= @job.company %></td>
+	</tr>
+	<tr>
+		<th>Application Date</th>
+		<td><%= @job.application_date%></td>
+	</tr>
+		
+</table>
+
+<%= submit_tag("Confirm Delete") %>
+<% end %>
