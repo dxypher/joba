@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  job_title: MyString
+  company: MyString
+  application_date: 2012-05-01
+  response: MyString
+  phone: 
+  email: MyString
+
+two:
+  job_title: MyString
+  company: MyString
+  application_date: 2012-05-01
+  response: MyString
+  phone: 
+  email: MyString

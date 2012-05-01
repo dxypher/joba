@@ -1,8 +1,9 @@
 class JobsController < ApplicationController
-	def create		
+	def list
+		@jobs = Job.all
 	end
 
-	def show_all
-		
+	def show
+		@job = Job.find_by_id(params[:id])
 	end
 end

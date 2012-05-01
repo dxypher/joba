@@ -1,0 +1,24 @@
+<a href="/dashboard">Back to Dashboard</a>
+<h1>Jobs List</h1>
+
+<table>
+	
+	<tr>
+		<th>Job Title</th>
+		<th></th>
+		<th>Company</th>
+		<th>Application Date</th>		
+	</tr>
+	<% @jobs.each do |job| %>
+	<tr>		
+		<td><a href = "jobs/<%=job.id%>"><%= job.job_title %></a></td>
+		<td></td>
+		<td><%= job.company %></td>
+		<td><%= job.application_date %></td>
+		<td>Edit</td>
+		<td>Delete</td>		
+	</tr>
+	<% end %>
+</table>	
+
+<a href="/jobs">Add a Job</a>

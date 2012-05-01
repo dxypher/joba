@@ -1,0 +1,44 @@
+<h2>Details</h2>
+
+<table>
+	<tr>
+		<th>Job Title</th>
+		<td><%= @job.job_title %></td>
+	</tr>
+	<tr>
+		<th>Company</th>
+		<td><%= @job.company %></td>
+	</tr>
+	<tr>
+		<th>Application Date</th>
+		<td><%= @job.application_date%></td>
+	</tr>
+	<tr>
+		<th>Response</th>
+		<td><%= @job.response %></td>
+	</tr>
+	<tr>
+		<th>Phone</th>
+		<td><%= @job.phone %></td>
+	</tr>
+	<tr>
+		<th>email</th>
+		<td><a href="<%= @job.email %>">email</a></td>
+	</tr>
+	<tr>
+		<th>Website</th>
+		<td><a href="<%= @job.website %>">Website</a></td>
+	</tr>	
+	<tr>
+		<th>Blog</th>
+		<td><a href="<%= @job.blog %>">Blog</a></td>
+	</tr>
+	<tr>
+		<th>Job Board</th>
+		<td><a href="<%= @job.job_board %>">Job Board</a></td>
+	</tr>
+	<tr>
+		<th>Notes</th>
+		<td><%= @job.notes %></td>
+	</tr>	
+</table>
