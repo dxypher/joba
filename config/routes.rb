@@ -3,6 +3,8 @@ Joba::Application.routes.draw do
 
   get '/dashboard', :controller => 'dashboard', :action => 'index'
 
+#Jobs Routes
+
   get '/jobs', :controller => 'jobs', :action => 'list'
 
   get '/jobs/new', :controller => 'jobs', :action => 'new'
@@ -15,5 +17,8 @@ Joba::Application.routes.draw do
 
   get '/jobs/delete/:id', :controller => "jobs", :action => "delete"
   delete 'jobs/:id', :controller => 'jobs', :action => 'destroy'
+
+#Company Routes
+  get '/companies', :controller => 'companies', :action => 'list'
 
 end

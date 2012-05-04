@@ -11,7 +11,25 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120501204815) do
+ActiveRecord::Schema.define(:version => 20120503184735) do
+
+  create_table "companies", :force => true do |t|
+    t.string   "name"
+    t.integer  "founded"
+    t.string   "website"
+    t.string   "job_board"
+    t.string   "blog"
+    t.integer  "phone"
+    t.string   "email"
+    t.string   "industry"
+    t.text     "business_model"
+    t.text     "main_competitors"
+    t.text     "threats"
+    t.text     "opportunities"
+    t.text     "latest_news"
+    t.datetime "created_at",       :null => false
+    t.datetime "updated_at",       :null => false
+  end
 
   create_table "jobs", :force => true do |t|
     t.integer  "phone"
@@ -26,6 +44,8 @@ ActiveRecord::Schema.define(:version => 20120501204815) do
     t.string   "company"
     t.string   "response"
     t.date     "application_date"
+    t.text     "job_summary"
+    t.string   "job_posting"
   end
 
 end

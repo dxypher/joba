@@ -15,21 +15,29 @@
 		<td><%= @job.application_date%></td>
 	</tr>
 	<tr>
+		<th>Job Summary</th>
+		<td><%= @job.job_summary%></td>
+	</tr>
+	<tr>
 		<th>Response</th>
 		<td><%= @job.response %></td>
 	</tr>
 	<tr>
 		<th>Phone</th>
-		<td><%= @job.phone %></td>
+		<td><%= number_to_phone(@job.phone, :area_code => true) %></td>
 	</tr>
 	<tr>
 		<th>email</th>
 		<td><a href="<%= @job.email %>">email</a></td>
 	</tr>
 	<tr>
+		<th>Job Posting</th>
+		<td><a href="<%= @job.job_posting %>">Job Posting</a></td>
+	</tr>
+	<tr>
 		<th>Website</th>
 		<td><a href="<%= @job.website %>">Website</a></td>
-	</tr>	
+	</tr>		
 	<tr>
 		<th>Blog</th>
 		<td><a href="<%= @job.blog %>">Blog</a></td>

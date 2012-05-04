@@ -1,40 +1,56 @@
 <h2>Add a New Job</h2>
 
-<%= form_for @job, :url => {:action => 'create'} do |f| %>
+<%= form_for @job do |f| %>
 <table>
 	<tr>
 		<th>Job Title:</th>
 		<td><%= f.text_field(:job_title) %></td>
-	</tr><tr>
+	</tr>
+	<tr>
 		<th>Company:</th>
 		<td><%= f.text_field(:company) %></td>
-	</tr><tr>
+	</tr>
+	<tr>
 		<th>Application Date:</th>
 		<td><%= f.text_field(:application_date) %></td>
-	</tr><tr>
+	</tr>
+	<tr>
+		<th>Job Summary:</th>
+		<td><%= f.text_area(:job_summary, :size => "40x10") %></td>
+	</tr>
+	<tr>
 		<th>Response:</th>
 		<td><%= f.text_field(:response) %></td>
-	</tr><tr>
+	</tr>
+	<tr>
 		<th>Phone:</th>
 		<td><%= f.text_field(:phone) %></td>
-	</tr><tr>
+	</tr>
+	<tr>
 		<th>Email:</th>
 		<td><%= f.text_field(:email) %></td>
-	</tr><tr>
+	</tr>
+	<tr>
+		<th>Job Posting Link:</th>
+		<td><%= f.text_field(:job_posting) %></td>
+	</tr>
+	<tr>
 		<th>Website:</th>
 		<td><%= f.text_field(:website) %></td>
-	</tr><tr>
+	</tr>
+	<tr>
 		<th>Blog:</th>
 		<td><%= f.text_field(:blog) %></td>
-	</tr><tr>
+	</tr>
+	<tr>
 		<th>Job Board:</th>
 		<td><%= f.text_field(:job_board) %></td>
-	</tr><tr>
+	</tr>
+	<tr>
 		<th>Notes:</th>
 		<td><%= f.text_area(:notes, :size => "24x6") %></td>
 	</tr>
 
 </table>
-<%= submit_tag("Add Job")  %>
-
+<%= submit_tag("Edit Job")  %>
 <% end %>
