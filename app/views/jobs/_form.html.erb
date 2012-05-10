@@ -1,0 +1,54 @@
+<%= form_for @job do |f| %>
+<table>
+	<tr>
+		<th><%= f.label :job_title %></th>
+		<td><%= f.text_field(:job_title) %></td>
+	</tr>
+	<tr>
+		<th><%= f.label :company %></th>
+		<td><%= f.text_field(:company) %></td>
+	</tr>
+	<tr>
+		<th><%= f.label :application_date %></th>
+		<td><%= f.text_field(:application_date) %></td>
+	</tr>
+	<tr>
+		<th><%= f.label :job_summary %></th>
+		<td><%= f.text_area(:job_summary, :size => "40x10") %></td>
+	</tr>
+	<tr>
+		<th><%= f.label :response %></th>
+		<td><%= f.text_field(:response) %></td>
+	</tr>
+	<tr>
+		<th><%= f.label :phone %></th>
+		<td><%= f.text_field(:phone) %></td>
+	</tr>
+	<tr>
+		<th><%= f.label :email %></th>
+		<td><%= f.text_field(:email) %></td>
+	</tr>
+	<tr>
+		<th><%= f.label :job_posting %></th>
+		<td><%= f.text_field(:job_posting) %></td>
+	</tr>
+	<tr>
+		<th><%= f.label :website %></th>
+		<td><%= f.text_field(:website) %></td>
+	</tr>
+	<tr>
+		<th><%= f.label :blog %></th>
+		<td><%= f.text_field(:blog) %></td>
+	</tr>
+	<tr>
+		<th><%= f.label :job_board %></th>
+		<td><%= f.text_field(:job_board) %></td>
+	</tr>
+	<tr>
+		<th><%= f.label :notes %></th>
+		<td><%= f.text_area(:notes, :size => "24x6") %></td>
+	</tr>
+
+</table>
+<p><%= f.submit %></p>
+<% end %>

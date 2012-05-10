@@ -10,7 +10,7 @@ class JobsController < ApplicationController
 		redirect_to '/jobs'
 	end
 
-	def list
+	def index
 		@jobs = Job.all
 	end
 

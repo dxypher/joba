@@ -1,0 +1,23 @@
+<a href="/dashboard">Back to Dashboard</a>
+<h1>Companies</h1>
+
+<table>
+	
+	<tr>
+		<th>Company</th>
+		<th></th>
+		<th>Date Added</th>		
+	</tr>
+	<% @jobs.each do |job| %>
+	<tr>		
+		<td><a href = "http://localhost:3000/jobs/<%=job.id%>"><%= job.job_title %></a></td>
+		<td></td>
+		<td><a href ="http://localhost:3000/<%=job.id%>"><%= job.company %></a></td>
+		<td><%= job.application_date %></td>
+		<td><%= link_to("Edit", {:action => "edit", :id => job.id})  %></td>
+		<td><%= link_to("Delete", {:action => "delete", :id => job.id})  %></td>		
+	</tr>
+	<% end %>
+</table>	
+
+<a href="/jobs/new">Add a Job</a>
