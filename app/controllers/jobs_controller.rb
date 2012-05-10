@@ -25,7 +25,7 @@ class JobsController < ApplicationController
 	def update
 		@job = Job.find_by_id(params[:id])
 		@job.update_attributes(params[:job])
-		redirect_to '/job/:id'
+		redirect_to "/jobs/:#{@job.id}"
 	end
 
 	def delete
