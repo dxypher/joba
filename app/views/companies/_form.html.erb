@@ -1,0 +1,59 @@
+
+<%= form_for @company do |f| %>
+<table>
+	<tr>
+		<th><%= f.label :name %></th>
+		<td><%= f.text_field(:name) %></td>
+	</tr>
+	<tr>
+		<th><%= f.label :founded %></th>
+		<td><%= f.text_field(:founded) %></td>
+	</tr>
+	<tr>
+		<th><%= f.label :industry %></th>
+		<td><%= f.text_field(:industry) %></td>
+	</tr>
+	<tr>
+		<th><%= f.label :phone %></th>
+		<td><%= f.text_field(:phone) %></td>
+	</tr>
+	<tr>
+		<th><%= f.label :email %></th>
+		<td><%= f.text_field(:email) %></td>
+	</tr>
+	<tr>
+		<th><%= f.label :website %></th>
+		<td><%= f.text_field(:website) %></td>
+	</tr>
+	<tr>
+		<th><%= f.label :blog %></th>
+		<td><%= f.text_field(:blog) %></td>
+	</tr>
+	<tr>
+		<th><%= f.label :job_board %></th>
+		<td><%= f.text_field(:job_board) %></td>
+	</tr>
+	<tr>
+		<th><%= f.label :business_model %></th>
+		<td><%= f.text_area(:business_model, :size => "24x6") %></td>
+	</tr>
+	<tr>
+		<th><%= f.label :main_competitors %></th>
+		<td><%= f.text_area(:main_competitors, :size => "24x6") %></td>
+	</tr>
+	<tr>
+		<th><%= f.label :threats %></th>
+		<td><%= f.text_area(:threats, :size => "24x6") %></td>
+	</tr>
+	<tr>
+		<th><%= f.label :opportunities %></th>
+		<td><%= f.text_area(:opportunities, :size => "24x6") %></td>
+	</tr>
+	<tr>
+		<th><%= f.label :latest_news %></th>
+		<td><%= f.text_area(:latest_news, :size => "24x6") %></td>
+	</tr>
+
+</table>
+<p><%= f.submit %></p>
+<% end %>

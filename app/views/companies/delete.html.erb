@@ -1,0 +1,13 @@
+<a href="/companies">Back to Company List</a>
+<h2>Are you sure you want to delete:</h2>
+<%= form_for @company, :url => {:action => 'destroy'}, :method => 'delete' do %> 
+<table>
+	<tr>
+		<th>Company</th>
+		<td><%= @company.name %></td>
+	</tr>
+		
+</table>
+
+<%= submit_tag("Confirm Delete") %>
+<% end %>
