@@ -5,10 +5,10 @@
 		<td><%= f.text_field(:job_title) %></td>
 	</tr>
 	
-    	<%= fields_for :company do |company_name| %>
+    	<%= fields_for :company do |company| %>
       	<tr>
       		<th>Company Name</th>
-        	<td><%= company_name.text_field(:name) %></td>
+        	<td><%= company.text_field(:name) %></td>
       	</tr>
     	<% end %>
   	

@@ -2,14 +2,14 @@ class JobsController < ApplicationController
 
 	def new
 		@job = Job.new
-		@company = Company.new
+		
+		
 	end
 
 	def create
-		@job = Job.new(params[:job])
-		@company = Company.create(params[:company])
-		@job.company_id=@company.id
-		@job.save
+		@job = Job.create(params[:job])
+		
+		
 
 		redirect_to '/jobs'
 		# @order = @customer.orders.create(:order_date => Time.now)

@@ -3,4 +3,5 @@ class Job < ActiveRecord::Base
   				  :notes, :job_posting, :job_summary, :company_id
 
   belongs_to :company
+  accepts_nested_attributes_for :company
 end
