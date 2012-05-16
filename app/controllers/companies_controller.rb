@@ -25,7 +25,7 @@ class CompaniesController < ApplicationController
 	def update
 		@company = Company.find_by_id(params[:id])
 		@company.update_attributes(params[:company])
-		redirect_to '/companies/:id'
+		redirect_to '/companies/#{@company.id}'
 	end
 
 	def delete

@@ -9,11 +9,13 @@
 		<th>Company</th>
 		<th>Application Date</th>		
 	</tr>
+	
 	<% @jobs.each do |job| %>
+	
 	<tr>		
 		<td><a href = "http://localhost:3000/jobs/<%=job.id%>"><%= job.job_title %></a></td>
 		<td></td>
-		<td><a href ="http://localhost:3000/<%=job.id%>"><%= job.company %></a></td>
+		<td><a href ="http://localhost:3000/companies/<%=job.company_id%>">Company</a></td>
 		<td><%= job.application_date %></td>
 		<td><%= link_to("Edit", {:action => "edit", :id => job.id})  %></td>
 		<td><%= link_to("Delete", {:action => "delete", :id => job.id})  %></td>		

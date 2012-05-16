@@ -4,10 +4,14 @@
 		<th><%= f.label :job_title %></th>
 		<td><%= f.text_field(:job_title) %></td>
 	</tr>
-	<tr>
-		<th><%= f.label :company %></th>
-		<td><%= f.text_field(:company) %></td>
-	</tr>
+	
+    	<%= fields_for :company do |company_name| %>
+      	<tr>
+      		<th>Company Name</th>
+        	<td><%= company_name.text_field(:name) %></td>
+      	</tr>
+    	<% end %>
+  	
 	<tr>
 		<th><%= f.label :application_date %></th>
 		<td><%= f.text_field(:application_date) %></td>
