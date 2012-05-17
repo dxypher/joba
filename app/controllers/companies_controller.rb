@@ -9,16 +9,6 @@ class CompaniesController < ApplicationController
 		redirect_to '/companies'
 	end
 
-	def new_job
-		@company = Company.new
-	end
-
-	def create_job
-		@company = Company.create(params[:company])
-		@company.jobs.create(params[:job])
-		redirect_to '/jobs'
-	end
-
 	def index
 		@companies = Company.all
 	end

@@ -4,4 +4,10 @@ class Job < ActiveRecord::Base
 
   belongs_to :company
   accepts_nested_attributes_for :company
+
+  def self.create_job company, job
+  	@company = Company.find_or_create_by_name(company[:name])
+	@company.jobs.create(job)
+	
+  end
 end
