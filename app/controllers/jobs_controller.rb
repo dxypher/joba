@@ -7,12 +7,9 @@ class JobsController < ApplicationController
 	end
 
 	def create
-		@job = Job.create(params[:job])
-		
-		
-
+		@job = Job.create(params[:job])		
 		redirect_to '/jobs'
-		# @order = @customer.orders.create(:order_date => Time.now)
+		
 	end
 
 	def index
@@ -28,11 +25,13 @@ class JobsController < ApplicationController
 	def edit
 		id = params[:id]
 		@job = Job.find_by_id(id)
+
 	end
 
 	def update
 		@job = Job.find_by_id(params[:id])
 		@job.update_attributes(params[:job])
+		@job.companies.update_attributes(params[@job.company])
 		redirect_to "/jobs/#{@job.id}"
 	end
 

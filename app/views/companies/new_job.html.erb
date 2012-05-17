@@ -1,17 +1,17 @@
-<%= form_for @job do |f| %>
+<h1>Add a New Job</h1>
+<%= form_for @company, :url => { :action => "create_job" } do |a| %>
 <table>
-	<tr>
+	  	
+    <tr>
+      	<th>Company Name</th>
+        <td><%= a.text_field(:name) %></td>
+    </tr>
+    	
+    <%= fields_for :job do |f| %>
+    <tr>
 		<th><%= f.label :job_title %></th>
 		<td><%= f.text_field(:job_title) %></td>
 	</tr>
-	
-    	<%= fields_for @job.company do |company| %>
-      	<tr>
-      		<th>Company Name</th>
-        	<td><%= company.text_field(:name) %></td>
-      	</tr>
-    	<% end %>
-  	
 	<tr>
 		<th><%= f.label :application_date %></th>
 		<td><%= f.text_field(:application_date) %></td>
@@ -52,7 +52,8 @@
 		<th><%= f.label :notes %></th>
 		<td><%= f.text_area(:notes, :size => "24x6") %></td>
 	</tr>
+	<% end %>
 
 </table>
-<p><%= f.submit %></p>
+<p><%= submit_tag('Add Job') %></p>
 <% end %>
