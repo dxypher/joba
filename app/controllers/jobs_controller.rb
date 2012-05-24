@@ -23,15 +23,19 @@ class JobsController < ApplicationController
 	end
 
 	def edit
-		id = params[:id]
-		@job = Job.find_by_id(id)
+		#id = params[:id]
+		@job = Job.find_by_id(params[:id])
+		@company = Company.find_by_id(@job.company_id)
 
 	end
 
 	def update
-		@job = Job.find_by_id(params[:id])
-		@job.update_attributes(params[:job])
-		@job.company.update_attributes(params[:company])
+		# @job = Job.find_by_id(params[:id])
+		# @job.update_attributes(params[:job])
+		# @job.company.update_attributes(params[:company])
+		@company = Job.update_company(params[:company])
+		@job_update = @company.jobs.find_by_id(params[:id])
+		@job_update.update_attributes(params[:job])
 		redirect_to "/jobs/#{@job.id}"
 	end
 

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120511184806) do
+ActiveRecord::Schema.define(:version => 20120524144620) do
 
   create_table "companies", :force => true do |t|
     t.string   "name"
@@ -41,7 +41,6 @@ ActiveRecord::Schema.define(:version => 20120511184806) do
     t.datetime "created_at",       :null => false
     t.datetime "updated_at",       :null => false
     t.string   "job_title"
-    t.string   "company"
     t.string   "response"
     t.date     "application_date"
     t.text     "job_summary"

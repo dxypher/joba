@@ -15,7 +15,7 @@
 	<tr>		
 		<td><a href = "http://localhost:3000/jobs/<%=job.id%>"><%= job.job_title %></a></td>
 		<td></td>
-		<td><a href ="http://localhost:3000/companies/<%=job.company_id%>">Company</a></td>
+		<td><a href ="http://localhost:3000/companies/<%=job.company_id%>"><%=job.company.name%></a></td>
 		<td><%= job.application_date %></td>
 		<td><%= link_to("Edit", {:action => "edit", :id => job.id})  %></td>
 		<td><%= link_to("Delete", {:action => "delete", :id => job.id})  %></td>		
