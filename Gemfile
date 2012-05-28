@@ -23,6 +23,7 @@ end
 
 gem 'jquery-rails'
 gem 'carrierwave'
+gem 'nested_form'
 
 
 group :production do

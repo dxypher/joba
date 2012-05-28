@@ -53,5 +53,13 @@
 	<tr>
 		<th>Notes</th>
 		<td><%= @company.latest_news %></td>
-	</tr>	
+	</tr>
+
+	<ul>
+  		<% @company.attachments.each do |f| %>
+    	<li>
+    	<%= f.name %> - <%= link_to("Download", f.file_url) %>
+    	</li>
+  		<% end %>
+	</ul>	
 </table>

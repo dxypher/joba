@@ -1,5 +1,5 @@
 
-<%= form_for @company do |f| %>
+<%= nested_form_for @company, :html => {:multipart => true} do |f| %>
 <table>
 	<tr>
 		<th><%= f.label :name %></th>
@@ -52,6 +52,20 @@
 	<tr>
 		<th><%= f.label :latest_news %></th>
 		<td><%= f.text_area(:latest_news, :size => "24x6") %></td>
+	</tr>
+
+	<%= f.fields_for :attachments do |a|  %>
+	<tr>	    
+   		<th><%= a.label :name %></th>
+    	<td><%= a.text_field :name %></td>
+    </tr>
+    <tr>
+    	<th><%= a.label :file %></th>
+    	<td><%= a.file_field :file %></td>
+    </tr>
+    <%= a.link_to_remove "Remove this attachment" %>
+  	<% end %>
+  	<%= f.link_to_add "Add Document", :attachments %>
 	</tr>
 
 </table>

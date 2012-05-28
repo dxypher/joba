@@ -5,6 +5,7 @@ Joba::Application.routes.draw do
   resources :dashboard
   resources :jobs  
     get '/jobs/delete/:id', :controller => "jobs", :action => "delete"
+    get '/companies/delete/:id', :controller => "companies", :action => "delete"
   resources :companies  
   
   

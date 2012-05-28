@@ -35,7 +35,7 @@ class CompaniesController < ApplicationController
 	def destroy
 		@company = Company.find_by_id(params[:id]).destroy
 
-		render 'index'
+		redirect_to ('/companies')
 		
 	end
 end

@@ -50,8 +50,14 @@
 		<th>Notes</th>
 		<td><%= @job.notes %></td>
 	</tr>
-	<tr>
-		<th>Resume</th>
-		<td><%= link_to "Download Resume", @job.document_url %></td>
-	</tr>	
+	
+
+	<ul>
+  		<% @job.attachments.each do |f| %>
+    	<li>
+    	<%= f.name %> - <%= link_to("Download", f.file_url) %>
+    	</li>
+  		<% end %>
+	</ul>
+
 </table>
