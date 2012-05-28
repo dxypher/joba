@@ -49,5 +49,9 @@
 	<tr>
 		<th>Notes</th>
 		<td><%= @job.notes %></td>
+	</tr>
+	<tr>
+		<th>Resume</th>
+		<td><%= link_to "Download Resume", @job.document_url %></td>
 	</tr>	
 </table>
