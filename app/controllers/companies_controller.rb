@@ -15,6 +15,9 @@ class CompaniesController < ApplicationController
 
 	def show
 		@company = Company.find_by_id(params[:id])
+		company_name = @company.name 
+		query = company_name.tr(' ','_') 
+		@posts = JSON.parse(open("http://search.twitter.com/search.json?q=#{query}&rpp=10&include_entities=true&result_type=mixed").read)["results"]
 	end
 
 	def edit

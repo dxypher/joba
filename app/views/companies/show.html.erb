@@ -35,23 +35,23 @@
 		<td><a href="<%= @company.job_board %>">Company Job Board</a></td>
 	</tr>
 	<tr>
-		<th>Notes</th>
+		<th>Business Model</th>
 		<td><%= @company.business_model %></td>
 	</tr>
 	<tr>
-		<th>Notes</th>
+		<th>Competitors</th>
 		<td><%= @company.main_competitors %></td>
 	</tr>
 	<tr>
-		<th>Notes</th>
+		<th>Threats</th>
 		<td><%= @company.threats %></td>
 	</tr>
 	<tr>
-		<th>Notes</th>
+		<th>Opportunities</th>
 		<td><%= @company.opportunities %></td>
 	</tr>
 	<tr>
-		<th>Notes</th>
+		<th>Latest News</th>
 		<td><%= @company.latest_news %></td>
 	</tr>
 
@@ -63,3 +63,11 @@
   		<% end %>
 	</ul>	
 </table>
+<h2>Recent Twitter Posts Containing Company Name</h2>
+<ol>
+	<%@posts.each do |post|%>
+		<li><%=post["text"]%><br/>
+		<%=post["from_user"]%> - <%= time_ago_in_words(post["created_at"]) %> ago</li>
+
+	<%end%>
+</ol>
