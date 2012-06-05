@@ -1,37 +1,54 @@
 <h1>Career Dashboard</h1>
-
+<div style="float:left;">
 <table>
-	<caption><h3>Jobs You've Applied To:<h3></caption>
+	
 	<tr>
 		<th>Job Title</th>
 		<th></th>
 		<th>Company</th>
-		<th>Application Date</th>
+		<th>Application Date</th>		
 	</tr>
-	<tr>
-		<td>Ruby on Rails Developer</td>
+	
+	<% @jobs.each do |job| %>
+	
+	<tr>		
+		<td><a href = "http://localhost:3000/jobs/<%=job.id%>"><%= job.job_title %></a></td>
 		<td></td>
-		<td>Groupon</td>
-		<td>6/14/20212</td>
+		<td><a href ="http://localhost:3000/companies/<%=job.company_id%>"><%=job.company.name%></a></td>
+		<td><%= job.application_date %></td>		
 	</tr>
-	<tr>
-		<td>Jr. Rails Developer</td>
-		<td></td>
-		<td>Pivotal Labs</td>
-		<td>6/27/20212</td>
-	</tr>
-	<tr>
-		<td>Rails Development Apprentice</td>
-		<td></td>
-		<td>Hash Rocket</td>
-		<td>6/27/20212</td>
-	</tr>
-	<tr>
-		<td>Software Developement Apprentice</td>
-		<td></td>
-		<td>Living Social</td>
-		<td>6/30/20212</td>
-	</tr>
+	<% end %>
 </table>	
 
+<a href="/jobs/new">Add a Job</a>	
+
 <a href="/jobs">See All Jobs</a>
+</div>
+<div style="float: right;">
+<table>
+	
+	<tr>
+		<th>Company</th>
+		
+	</tr>
+	<% @companies.each do |company| %>
+	<tr>		
+		<td><a href = "http://localhost:3000/companies/<%=company.id%>"><%= company.name %></a></td>		
+	</tr>
+	<% end %>
+</table>	
+
+<a href="/companies/new">Add a Company</a>	
+
+<a href="/companies">See All Companies</a>
+</div>
+
+<div class="to_do">
+	<%@tasks.each do |task|%>
+		<ol>
+			<li><%=task%></li>
+
+		</ol>
+
+	<%end%>
+</div>
