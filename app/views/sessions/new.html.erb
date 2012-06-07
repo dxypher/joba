@@ -1,0 +1,11 @@
+<p>Login</p>
+<%=form_tag sessions_create_url do %>
+
+	<%= label_tag :email %>
+	<%= text_field_tag :email %>
+	<%= label_tag :passord %>
+	<%= password_field_tag :password %>
+	
+	<%=submit_tag 'Login'%>
+
+<%end%>

@@ -1,0 +1,13 @@
+<p>Sign Up for Joba</p>
+
+<%=form_for @user do |f|%>
+
+	<%= f.label :email %>
+	<%= f.text_field :email %>
+	<%= f.label :passord %>
+	<%= f.password_field :password %>
+	<%= f.label :passord_confirmation %>
+	<%= f.password_field :password_confirmation %>
+	<%=f.submit 'Create Account'%>
+
+<%end%>

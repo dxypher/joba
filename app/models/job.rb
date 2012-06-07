@@ -3,6 +3,7 @@ class Job < ActiveRecord::Base
   				  :notes, :job_posting, :job_summary, :company_id, :attachments_attributes #:document
 
   belongs_to :company
+  belongs_to :user
   has_many :attachments, :as => :attachable, :dependent => :destroy
   accepts_nested_attributes_for :company
   accepts_nested_attributes_for :attachments
