@@ -5,4 +5,7 @@ class User < ActiveRecord::Base
   has_many :companies
 
   has_secure_password
+
+  validates :password, :password_confirmation, :email, :presence => true
+  validates :email, :uniqueness => true
 end

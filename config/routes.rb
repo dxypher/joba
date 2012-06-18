@@ -8,7 +8,8 @@ Joba::Application.routes.draw do
     get '/jobs/delete/:id', :controller => "jobs", :action => "delete"
     get '/companies/delete/:id', :controller => "companies", :action => "delete"
   resources :companies
-  post "sessions/create"  
+  post "sessions/create"
+  get 'signout' => "sessions#destroy", as: 'sign_out'  
   resources :sessions
   
   

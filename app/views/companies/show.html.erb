@@ -1,73 +1,80 @@
-<a href="/companies">Back to Company List</a>
-<h2>Details</h2>
-<table>
-	<tr>
-		<th>Company</th>
-		<td><%= @company.name %></td>
-	</tr>
-	
-	<tr>
-		<th>Founded</th>
-		<td><%= @company.founded%></td>
-	</tr>
-	<tr>
-		<th>Industry</th>
-		<td><%= @company.industry%></td>
-	</tr>
-	<tr>
-		<th>Phone</th>
-		<td><%= number_to_phone(@company.phone, :area_code => true) %></td>
-	</tr>
-	<tr>
-		<th>email</th>
-		<td><a href="<%= @company.email %>">email</a></td>
-	</tr>
-	<tr>
-		<th>Website</th>
-		<td><a href="<%= @company.website %>">Website</a></td>
-	</tr>		
-	<tr>
-		<th>Blog</th>
-		<td><a href="<%= @company.blog %>">Blog</a></td>
-	</tr>
-	<tr>
-		<th>company Board</th>
-		<td><a href="<%= @company.job_board %>">Company Job Board</a></td>
-	</tr>
-	<tr>
-		<th>Business Model</th>
-		<td><%= @company.business_model %></td>
-	</tr>
-	<tr>
-		<th>Competitors</th>
-		<td><%= @company.main_competitors %></td>
-	</tr>
-	<tr>
-		<th>Threats</th>
-		<td><%= @company.threats %></td>
-	</tr>
-	<tr>
-		<th>Opportunities</th>
-		<td><%= @company.opportunities %></td>
-	</tr>
-	<tr>
-		<th>Latest News</th>
-		<td><%= @company.latest_news %></td>
-	</tr>
+<div class="row">
+	<div class="span-12">
+		<div class="span-8">
+			<h2>Details</h2>
+			<table class="table">
+				<tr>
+					<th>Company</th>
+					<td><%= @company.name %></td>
+				</tr>
+				
+				<tr>
+					<th>Founded</th>
+					<td><%= @company.founded%></td>
+				</tr>
+				<tr>
+					<th>Industry</th>
+					<td><%= @company.industry%></td>
+				</tr>
+				<tr>
+					<th>Phone</th>
+					<td><%= number_to_phone(@company.phone, :area_code => true) %></td>
+				</tr>
+				<tr>
+					<th>email</th>
+					<td><a href="<%= @company.email %>">email</a></td>
+				</tr>
+				<tr>
+					<th>Website</th>
+					<td><a href="<%= @company.website %>">Website</a></td>
+				</tr>		
+				<tr>
+					<th>Blog</th>
+					<td><a href="<%= @company.blog %>">Blog</a></td>
+				</tr>
+				<tr>
+					<th>company Board</th>
+					<td><a href="<%= @company.job_board %>">Company Job Board</a></td>
+				</tr>
+				<tr>
+					<th>Business Model</th>
+					<td><%= @company.business_model %></td>
+				</tr>
+				<tr>
+					<th>Competitors</th>
+					<td><%= @company.main_competitors %></td>
+				</tr>
+				<tr>
+					<th>Threats</th>
+					<td><%= @company.threats %></td>
+				</tr>
+				<tr>
+					<th>Opportunities</th>
+					<td><%= @company.opportunities %></td>
+				</tr>
+				<tr>
+					<th>Latest News</th>
+					<td><%= @company.latest_news %></td>
+				</tr>
 
-	<ul>
-  		<% @company.attachments.each do |f| %>
-    	<li>
-    	<%= f.name %> - <%= link_to("Download", f.file_url) %>
-    	</li>
-  		<% end %>
-	</ul>	
-</table>
-<h2>Recent Twitter Posts Containing Company Name</h2>
-<ol>
-	<%@posts.each do |post|%>
-		<li><%=post["text"]%><br/>
-		<%=post["from_user"]%> - <%= time_ago_in_words(post["created_at"]) %> ago</li>
+				<ul>
+			  		<% @company.attachments.each do |f| %>
+			    	<li>
+			    	<%= f.name %> - <%= link_to("Download", f.file_url) %>
+			    	</li>
+			  		<% end %>
+				</ul>	
+			</table>
+		</div>
+		<div class="span-4">
+			<h2>Recent Twitter posts containing <%= @company.name %></h2>
+			<ol>
+				<%@posts.each do |post|%>
+					<li><%=post["text"]%><br/>
+					<%=post["from_user"]%> - <%= time_ago_in_words(post["created_at"]) %> ago</li>
 
-	<%end%>
-</ol>
+				<%end%>
+			</ol>
+		</div>
+	</div>
+</div>

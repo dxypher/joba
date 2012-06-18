@@ -1,5 +1,8 @@
 class JobsController < ApplicationController
 
+	before_filter :require_login
+	# before_filter :require_user
+	
 	def new
 		@job = Job.new
 		@company = Company.new		
@@ -7,24 +10,25 @@ class JobsController < ApplicationController
 	end
 
 	def create
-		@job = Job.create_job(params[:company], params[:job])	
+		@job = Job.create_job(params[:company], params[:job])
+		@job.user = User.find(session[:login_id])	
 		redirect_to '/jobs'
 		
 	end
 
 	def index
-		@jobs = Job.all
+		@jobs = @user.jobs.all
 		
 	end
 
 	def show
-		@job = Job.find_by_id(params[:id])
+		@job = @user.jobs.find_by_id(params[:id])
 		
 	end
 
 	def edit
 		#id = params[:id]
-		@job = Job.find_by_id(params[:id])
+		@job = @user.jobs.find_by_id(params[:id])
 		@company = Company.find_by_id(@job.company_id)
 
 	end
@@ -34,7 +38,7 @@ class JobsController < ApplicationController
 		# @job.update_attributes(params[:job])
 		# @job.company.update_attributes(params[:company])
 		
-		@job = Job.find(params[:id])
+		@job = @user.jobs.find(params[:id])
 		@job.update_attributes(params[:job])
 		#@job.update_attribute('company_id', nil)
 		#@job.company.update_attributes(params[:company])
@@ -49,11 +53,11 @@ class JobsController < ApplicationController
 	end
 
 	def delete
-		@job = Job.find_by_id(params[:id])
+		@job = @user.jobs.find_by_id(params[:id])
 	end
 
 	def destroy
-		@job = Job.find_by_id(params[:id]).destroy
+		@job = @user.jobs.find_by_id(params[:id]).destroy
 
 		redirect_to ('/jobs')
 		

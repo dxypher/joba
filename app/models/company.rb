@@ -1,5 +1,5 @@
 class Company < ActiveRecord::Base
-  attr_accessible :blog, :business_model, :email, :founded, :industry, :job_board, :latest_news, :main_competitors, :name, :opportunities, :phone, :threats, :website, :attachments_attributes
+  attr_accessible :blog, :business_model, :email, :founded, :industry, :job_board, :latest_news, :main_competitors, :name, :opportunities, :phone, :threats, :website, :attachments_attributes, :user_id
 
   belongs_to :user
   has_many :jobs, :dependent => :destroy

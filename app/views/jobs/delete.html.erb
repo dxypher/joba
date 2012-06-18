@@ -1,7 +1,7 @@
-<a href="/jobs">Back to Jobs List</a>
+<div class="span-6">
 <h2>Are you sure you want to delete:</h2>
 <%= form_for @job, :url => {:action => 'destroy'}, :method => 'delete' do %> 
-<table>
+<table class="table table-bordered">
 	<tr>
 		<th>Job Title</th>
 		<td><%= @job.job_title %></td>
@@ -17,5 +17,7 @@
 		
 </table>
 
-<%= submit_tag("Confirm Delete") %>
+<button type="submit" class="btn btn-primary btn-large">Confirm Delete</button> Or <%= link_to "Cancel", jobs_url %>
 <% end %>
+
+</div>

@@ -14,7 +14,7 @@
   	
 	<tr>
 		<th><%= f.label :application_date %></th>
-		<td><%= f.text_field(:application_date) %></td>
+		<td><%= f.text_field :application_date, placeholder: 'year/mm/dd' %></td>
 	</tr>
 	<tr>
 		<th><%= f.label :job_summary %></th>
@@ -26,7 +26,7 @@
 	</tr>
 	<tr>
 		<th><%= f.label :phone %></th>
-		<td><%= f.text_field(:phone) %></td>
+		<td><%= f.text_field :phone, placeholder: 'Without Dashes' %></td>
 	</tr>
 	<tr>
 		<th><%= f.label :email %></th>
@@ -62,11 +62,12 @@
     <tr>
     	<th><%= a.label :file %></th>
     	<td><%= a.file_field :file %></td>
+    	<td><%= a.link_to_remove "Remove this attachment"%></td>
     </tr>
-    <%= a.link_to_remove "Remove this attachment"%>
+    
   	<% end %>
   	<%= f.link_to_add "Add Document", :attachments %>
 	</tr>
 </table>
-<p><%= f.submit %></p>
+<button type="submit" class="btn btn-primary btn-large">Submit</button>
 <% end %>

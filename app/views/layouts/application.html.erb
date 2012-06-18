@@ -7,6 +7,30 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
+	
+		<div class="navbar">
+  			<div class="navbar-inner">
+   				 <div class="container">
+   				 		<% if session[:login_id] %>
+   				 			<span class="brand"><%= link_to "JOBA", dashboards_url %></span>
+   				 		<% else %>
+   				 			<span class="brand">JOBA</span>
+						<% end %>
+						<ul class="nav">
+							<li><%= link_to "Dashboard", dashboards_url %></li>
+							<li><%= link_to "Jobs", jobs_url %></li>
+							<li><%= link_to "Companies", companies_url %></li>
+							<% if session[:login_id].present? %>
+								<li><%= link_to "Sign Out", sign_out_url %></li>
+							<% else %>
+								<li><%= link_to "Sign In", new_session_url %></li>
+							<% end %>
+						</ul>
+						
+					
+				</div>
+			</div>
+		</div>
 	<% if flash[:notice].present? %>
 		<p id="notice"><%= flash[:notice] %></p>
 	<% end %>

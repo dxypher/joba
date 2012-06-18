@@ -1,7 +1,7 @@
-<a href="/jobs">Back to Jobs List</a>
+
 <h2>Details</h2>
 
-<table>
+<table class="table">
 	<tr>
 		<th>Job Title</th>
 		<td><%= @job.job_title %></td>
@@ -51,13 +51,17 @@
 		<td><%= @job.notes %></td>
 	</tr>
 	
-
-	<ul>
-  		<% @job.attachments.each do |f| %>
-    	<li>
-    	<%= f.name %> - <%= link_to("Download", f.file_url) %>
-    	</li>
-  		<% end %>
-	</ul>
-
 </table>
+<div class="span-6">
+<table class="table table-bordered">
+	<% @job.attachments.each do |f| %>
+	<tr><th>Your Documents</th></tr>
+	<tr>
+		<th><%= f.name %></th><td><%= link_to("Download", f.file_url) %></td>
+	</tr>
+	<% end %>
+</table>
+</div>
+	
+
+

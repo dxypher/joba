@@ -1,45 +1,39 @@
-<h1>Career Dashboard</h1>
-<div style="float:left;">
-<table>
-	
-	<tr>
-		<th>Job Title</th>
-		<th></th>
-		<th>Company</th>
-		<th>Application Date</th>		
-	</tr>
-	
-	<% @jobs.each do |job| %>
-	
-	<tr>		
-		<td><a href = "http://localhost:3000/jobs/<%=job.id%>"><%= job.job_title %></a></td>
-		<td></td>
-		<td><a href ="http://localhost:3000/companies/<%=job.company_id%>"><%=job.company.name%></a></td>
-		<td><%= job.application_date %></td>		
-	</tr>
-	<% end %>
-</table>	
+<div class="row">
+	<div class="span-12 offset5">
+		<h1 class="offset2">Dashboard</h1>
+		<div class="span-6">
+			<table class="table table-bordered">				
+				<tr>
+					<th>Job Title</th>
+					<th>Company</th>
+					<th>Application Date</th>		
+				</tr>				
+				<% @user.jobs.each do |job| %>				
+				<tr>		
+					<td><a href = "http://localhost:3000/jobs/<%=job.id%>"><%= job.job_title %></a></td>
+					<td><a href ="http://localhost:3000/companies/<%=job.company_id%>"><%=job.company.name%></a></td>
+					<td><%= job.application_date %></td>		
+				</tr>
+				<% end %>
+			</table>
+			<span class="span-3"><%= link_to "Add Job", new_job_url %></span>
+			<span class="span-3"><%= link_to "See All Jobs", jobs_url %></span>
+		</div>
 
-<a href="/jobs/new">Add a Job</a>	
-
-<a href="/jobs">See All Jobs</a>
-</div>
-<div style="float: right;">
-<table>
-	
-	<tr>
-		<th>Company</th>
-		
-	</tr>
-	<% @companies.each do |company| %>
-	<tr>		
-		<td><a href = "http://localhost:3000/companies/<%=company.id%>"><%= company.name %></a></td>		
-	</tr>
-	<% end %>
-</table>	
-
-<a href="/companies/new">Add a Company</a>	
-
-<a href="/companies">See All Companies</a>
+		<div class="span-6">
+			<table class="table table-bordered">			
+				<tr>
+					<th>Company</th>					
+				</tr>
+				<% @user.companies.each do |company| %>
+				<tr>		
+					<td><a href = "http://localhost:3000/companies/<%=company.id%>"><%= company.name %></a></td>	
+				</tr>
+				<% end %>
+			</table>
+			<span class="span-3"><%= link_to "Add Company", new_company_url %></span>
+			<span class="span-3"><%= link_to "See All Companies", companies_url %></span>
+		</div>
+	</div>
 </div>
 

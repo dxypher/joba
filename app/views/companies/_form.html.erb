@@ -15,7 +15,7 @@
 	</tr>
 	<tr>
 		<th><%= f.label :phone %></th>
-		<td><%= f.text_field(:phone) %></td>
+		<td><%= f.text_field :phone, placeholder: 'Without Dashes' %></td>
 	</tr>
 	<tr>
 		<th><%= f.label :email %></th>
@@ -69,5 +69,5 @@
 	</tr>
 
 </table>
-<p><%= f.submit %></p>
+<button type="submit" class="btn btn-primary btn-large">Submit</button>
 <% end %>

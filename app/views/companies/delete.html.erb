@@ -1,13 +1,15 @@
-<a href="/companies">Back to Company List</a>
+
+<div class="span-6">
 <h2>Are you sure you want to delete:</h2>
 <%= form_for @company, :url => {:action => 'destroy'}, :method => 'delete' do %> 
-<table>
+<table class="table table-bordered">
 	<tr>
 		<th>Company</th>
 		<td><%= @company.name %></td>
 	</tr>
 		
 </table>
-
-<%= submit_tag("Confirm Delete") %>
+<button type="submit" class="btn btn-primary btn-large">Confirm Delete</button> Or <%= link_to "Cancel", companies_url %>
 <% end %>
+
+</div>

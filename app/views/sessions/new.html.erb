@@ -1,11 +1,18 @@
-<p>Login</p>
-<%=form_tag sessions_create_url do %>
+<div class="row">
+	<div class="span8 offset5">
+		<div class="center">
+			<div class="hero-unit">
+				<h2>Login</h2>
+				<%=form_tag sessions_create_url do %>
 
-	<%= label_tag :email %>
-	<%= text_field_tag :email %>
-	<%= label_tag :passord %>
-	<%= password_field_tag :password %>
-	
-	<%=submit_tag 'Login'%>
-
-<%end%>
+					<%= label_tag :email %>
+					<%= text_field_tag :email %>
+					<%= label_tag :passord %>
+					<%= password_field_tag :password %>
+					<br>
+					<button type="submit" class="btn btn-primary btn-large">Login</button> or <%= link_to "Sign Up", new_user_url %>
+				<%end%>
+			</div>
+		</div>
+	</div>
+</div>
