@@ -17,6 +17,7 @@ class CompaniesController < ApplicationController
 	end
 
 	def show
+		
 		@company = @user.companies.find_by_id(params[:id])
 		company_name = @company.name 
 		query = company_name.tr(' ','_') 

@@ -11,7 +11,8 @@ class Job < ActiveRecord::Base
 
   def self.create_job company, job
   	@company = Company.find_or_create_by_name(company[:name])
-	  @company.jobs.create(job)	
+	  @company.jobs.create(job)
+
   end
 
   def self.update_company company

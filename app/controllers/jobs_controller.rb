@@ -11,7 +11,8 @@ class JobsController < ApplicationController
 
 	def create
 		@job = Job.create_job(params[:company], params[:job])
-		@job.user = User.find(session[:login_id])	
+		# @job.user = User.find(session[:login_id])
+		# @job.save	
 		redirect_to '/jobs'
 		
 	end
