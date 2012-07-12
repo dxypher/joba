@@ -28,13 +28,14 @@ class CompaniesController < ApplicationController
 
 	def edit
 		@company = Company.find_by_id(params[:id])
+		@company.user = @user
+		@company.save
+
 	end
 
 	def update
 		@company = Company.find_by_id(params[:id])
 		@company.update_attributes(params[:company])
-		@company.user = @user
-		@company.save
 		render 'show'
 		
 	end
