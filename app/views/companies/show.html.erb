@@ -65,16 +65,16 @@
 			  		<% end %>
 				</ul>	
 			</table>
-		</div>
-		<div class="span-4">
+			<!-- <div class="span-4">
 			<h2>Recent Twitter posts containing <%= @company.name %></h2>
 			<ol>
-				<%@posts.each do |post|%>
-					<li><%=post["text"]%><br/>
-					<%=post["from_user"]%> - <%= time_ago_in_words(post["created_at"]) %> ago</li>
+				<#%@posts.each do |post|%>
+					<li><%#=post["text"]%><br/>
+					<%#=post["from_user"]%> - <%#= time_ago_in_words(post["created_at"]) %> ago</li>
 
-				<%end%>
+				<#%end%>
 			</ol>
+		</div> -->
 		</div>
 	</div>
 </div>

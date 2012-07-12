@@ -11,9 +11,10 @@ class JobsController < ApplicationController
 
 	def create
 		@job = Job.create_job(params[:company], params[:job])
-		# @job.user = User.find(session[:login_id])
-		# @job.save	
-		redirect_to '/jobs'
+		@job.user = @user
+		@job.save
+		id = @job.company.id
+		redirect_to :controller => 'companies', :action => 'edit', :id => id 	
 		
 	end
 

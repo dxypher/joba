@@ -9,6 +9,8 @@ class CompaniesController < ApplicationController
 
 	def create
 		@company = Company.create(params[:company])
+		@company.user = User.find(session[:login_id])
+		@company.save	
 		redirect_to '/companies'
 	end
 
@@ -19,18 +21,20 @@ class CompaniesController < ApplicationController
 	def show
 		
 		@company = @user.companies.find_by_id(params[:id])
-		company_name = @company.name 
-		query = company_name.tr(' ','_') 
-		@posts = JSON.parse(open("http://search.twitter.com/search.json?q=#{query}&rpp=10&include_entities=true&result_type=mixed").read)["results"]
+		# company_name = @company.name 
+		# query = company_name.tr(' ','_') 
+		# @posts = JSON.parse(open("http://search.twitter.com/search.json?q=#{query}&rpp=10&include_entities=true&result_type=mixed").read)["results"]
 	end
 
 	def edit
-		@company = @user.companies.find_by_id(params[:id])
+		@company = Company.find_by_id(params[:id])
 	end
 
 	def update
-		@company = @user.companies.find_by_id(params[:id])
+		@company = Company.find_by_id(params[:id])
 		@company.update_attributes(params[:company])
+		@company.user = @user
+		@company.save
 		render 'show'
 		
 	end
