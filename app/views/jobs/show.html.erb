@@ -55,12 +55,13 @@
 <div class="span-6">
 <table class="table table-bordered">
 	<% @job.attachments.each do |f| %>
-	<tr><th>Your Documents</th></tr>
+	<tr class="documents"><th>Your Documents</th></tr>
 	<tr>
 		<th><%= f.name %></th><td><%= link_to("Download", f.file_url) %></td>
 	</tr>
 	<% end %>
 </table>
+<%= link_to "Edit Job", edit_job_url(@job) %>
 </div>
 	
 
