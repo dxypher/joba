@@ -22,19 +22,19 @@
 				</tr>
 				<tr>
 					<th>email</th>
-					<td><a href="<%= @company.email %>">email</a></td>
+					<td><%= mail_to @company.email, (@company.email), :target => '_blank'%></td>
 				</tr>
 				<tr>
 					<th>Website</th>
-					<td><a href="<%= @company.website %>">Website</a></td>
+					<td><%= link_to @company.website, url_with_protocol(@company.website), :target => '_blank'%></td>
 				</tr>		
 				<tr>
 					<th>Blog</th>
-					<td><a href="<%= @company.blog %>">Blog</a></td>
+					<td><%= link_to @company.blog, url_with_protocol(@company.blog), :target => '_blank'%></td>
 				</tr>
 				<tr>
-					<th>company Board</th>
-					<td><a href="<%= @company.job_board %>">Company Job Board</a></td>
+					<th>Job Board</th>
+					<td><%= link_to @company.job_board, url_with_protocol(@company.job_board), :target => '_blank'%></td>
 				</tr>
 				<tr>
 					<th>Business Model</th>

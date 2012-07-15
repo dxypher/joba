@@ -28,23 +28,23 @@
 	</tr>
 	<tr>
 		<th>email</th>
-		<td><a href="<%= @job.email %>">email</a></td>
+		<td><%= mail_to @job.email, (@job.email), :target => '_blank'%></td>
 	</tr>
 	<tr>
 		<th>Job Posting</th>
-		<td><a href="<%= @job.job_posting %>">Job Posting</a></td>
+		<td><%= link_to @job.job_posting, url_with_protocol(@job.job_posting), :target => '_blank'%></td>
 	</tr>
 	<tr>
 		<th>Website</th>
-		<td><a href="<%= @job.website %>">Website</a></td>
+		<td><%= link_to @job.website, url_with_protocol(@job.website), :target => '_blank'%></td>
 	</tr>		
 	<tr>
 		<th>Blog</th>
-		<td><a href="<%= @job.blog %>">Blog</a></td>
+		<td><%= link_to @job.blog, url_with_protocol(@job.blog), :target => '_blank'%></td>
 	</tr>
 	<tr>
 		<th>Job Board</th>
-		<td><a href="<%= @job.job_board %>">Job Board</a></td>
+		<td><%= link_to @job.job_board, url_with_protocol(@job.job_board), :target => '_blank'%></td>
 	</tr>
 	<tr>
 		<th>Notes</th>
