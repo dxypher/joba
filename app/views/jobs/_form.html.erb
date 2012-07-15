@@ -1,6 +1,6 @@
 
 <%= nested_form_for @job, :html=> {:multipart => true} do |f| %>
-<table>
+<table class="job_form">
 	<tr>
 		<th><%= f.label :job_title %></th>
 		<td><%= f.text_field(:job_title) %></td>
@@ -67,7 +67,7 @@
     </tr>
     
   	<% end %>
-  	<%= f.link_to_add "Add Document", :attachments %>
+  	<p class="add_doc"><%= f.link_to_add "Click Here!! To upload a document - Add a Resume, Cover Letter etc...", :attachments %></p>
 	</tr>
 </table>
 <button type="submit" class="btn btn-primary btn-large">Submit</button>

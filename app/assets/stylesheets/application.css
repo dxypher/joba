@@ -12,3 +12,28 @@
  *= bootstrap
  *= require_tree .
 */
+.dash{
+	font-size: 17px;
+}
+
+
+
+input::-webkit-input-placeholder {
+    color:    black;
+}
+input:-moz-placeholder {
+    color:    black;
+}
+::-webkit-input-placeholder {
+    color:    black;
+}
+:-moz-placeholder {
+    color:    black;
+}
+
+.add_doc{
+	font-family: Arial;
+	font-size: 20px;
+	font-weight:bold;
+	text-transform:uppercase;
+}
