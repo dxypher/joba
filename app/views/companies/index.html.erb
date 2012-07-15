@@ -8,7 +8,7 @@
 	</tr>
 	<% @companies.each do |company| %>
 	<tr>		
-		<td><a href = "http://localhost:3000/companies/<%=company.id%>"><%= company.name %></a></td>
+		<td><%= link_to "#{company.name}", company_url(company) %></a></td>
 		<td><%= link_to("Edit", {:action => "edit", :id => company.id})  %></td>
 		<td><%= link_to("Delete", {:action => "delete", :id => company.id})  %></td>		
 	</tr>

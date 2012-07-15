@@ -8,7 +8,7 @@
 	</tr>
 	<tr>
 		<th>Company</th>
-		<td><a href= "http://localhost:3000/companies/<%=@job.company_id%>"><%= @job.company.name %></a></td>
+		<td><%= link_to "#{@job.company.name}", company_url(@job.company)%></a></td>
 	</tr>
 	<tr>
 		<th>Application Date</th>
